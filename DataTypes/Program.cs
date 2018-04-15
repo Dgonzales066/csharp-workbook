@@ -28,7 +28,7 @@ namespace DataTypes
             if (stick == "yes")
             {
                 Console.WriteLine();
-                Console.WriteLine("You now have a stick with you. Long and pointy you figure it will help you if you get into a fight.");
+                Console.WriteLine("You now have a stick with you. Long and pointy you figure it will help you on your adventure.");
             }
             else if (stick == "no")
             {
@@ -37,12 +37,11 @@ namespace DataTypes
             }
 
             Thread.Sleep (6000);
-
             Console.WriteLine();		
             Console.WriteLine("As you continue forward you enter a large cavern and make out a glowing object in the center of the room.");
             Console.WriteLine();
-            Thread.Sleep (2000);
-            Console.WriteLine("Do you approach the glowing object?");
+            Thread.Sleep (5000);
+            Console.WriteLine("Do you approach the glowing object? [yes or no]: ");
 
             string approach = "";
 
@@ -51,6 +50,7 @@ namespace DataTypes
             if (approach == "yes")
             {
                 Console.WriteLine();
+                Thread.Sleep (4000);
                 Console.WriteLine("As you move closer you see that the glowing object is an enourmous eye.");
                 Console.WriteLine();
                 Thread.Sleep (5000);
@@ -66,15 +66,15 @@ namespace DataTypes
             }
 
             Console.WriteLine();
-            Console.WriteLine("The spider lunges at you!");
-            Console.WriteLine("what do you do? Run or Fight?");
+            Thread.Sleep (5000);
+            Console.WriteLine("The spider lunges at you! What do you do? [run or fight]");
 			
 				
             string doing = "";
 
             doing = Console.ReadLine();
 
-            if (doing == "Fight")
+            if (doing == "fight")
             {
                 Random r = new Random();
                 int number = r.Next(1, 10);
@@ -84,18 +84,28 @@ namespace DataTypes
 
                 if (number < 4)
                 {
-                    Console.WriteLine("You died.");
+                    Console.WriteLine("You died. THE END.");
+                    Console.WriteLine();
                 }
                 else if (number == 5)
-                    Console.WriteLine("You hit it.");
+                    Console.WriteLine("You hit it but your strike is weak and the spider kills you. THE END");
                 else if (number == 6)
-                    Console.WriteLine("You hit it.");
+                    Console.WriteLine("You hit it with the stick but it's only a stick and the spider becomes angry. It leaps forward and kills you. THE END.");
+                else if (number == 7)
+                    Console.WriteLine("You hit it as hard as you could but its a giant spider and you only have a stick. The spider jumps on top of you and kills you. THE END.");
+                else if (number == 8)
+                    Console.WriteLine("You hit it and do just enough damage that the spider runs away in terror.");
                 else 
                     Console.WriteLine("You've killed it.");
+                    Console.WriteLine();
             }
-            else if (doing == "Run")
+            else if (doing == "run")
             {
+                Console.WriteLine();
                 Console.WriteLine("The spider sees you and jumps on your back. You feel its fangs sink deep into you as you slowly die.");
+                Console.WriteLine();
+                Console.WriteLine("The End!");
+                Console.WriteLine();
             }
             
 
