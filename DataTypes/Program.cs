@@ -60,12 +60,43 @@ namespace DataTypes
             {
                 Console.WriteLine();
                 Console.WriteLine("Nervously you slowly back away from the glowing object but knock over a stone causing a loud noise.");
+                Console.WriteLine();
                 Thread.Sleep (3000);
-                Console.WriteLine("The glowing object turns to you! You realize you're staring into the eyes of a gigantic spider!");
+                Console.WriteLine("The glowing object turns to you! You realize you're staring into the eye of a gigantic spider!");
             }
+
+            Console.WriteLine();
+            Console.WriteLine("The spider lunges at you!");
+            Console.WriteLine("what do you do? Run or Fight?");
 			
 				
-            
+            string doing = "";
+
+            doing = Console.ReadLine();
+
+            if (doing == "Fight")
+            {
+                Random r = new Random();
+                int number = r.Next(1, 10);
+
+                //System.Console.WriteLine(number);
+                //Console.ReadKey();
+
+                if (number < 4)
+                {
+                    Console.WriteLine("You died.");
+                }
+                else if (number == 5)
+                    Console.WriteLine("You hit it.");
+                else if (number == 6)
+                    Console.WriteLine("You hit it.");
+                else 
+                    Console.WriteLine("You've killed it.");
+            }
+            else if (doing == "Run")
+            {
+                Console.WriteLine("The spider sees you and jumps on your back. You feel its fangs sink deep into you as you slowly die.");
+            }
             
 
 
