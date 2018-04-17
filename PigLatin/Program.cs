@@ -4,18 +4,31 @@ namespace PigLatin
 {
     class Program
     {
-        public static void Main()
+        public static void Main(string [] args)
         {
-            // your code goes here
+            
+            Console.WriteLine("Lets write in Pig Latin.");
+            Console.WriteLine("Enter a word.");
 
-            // leave this command at the end so your program does not close automatically
-            Console.ReadLine();
-        }
+            bool bkTop = true;    
+
+            while(bkTop)
+            {
+            string firstWord = "";
+            
+            firstWord = Console.ReadLine();
+            
+            string firstLetter = firstWord.Substring(0, 1);
+            string newWord = firstWord.Substring(1);
+            string pigLatin = newWord + "ay" + firstLetter;
+            Console.WriteLine(pigLatin);
+
+            }
+             
+            bkTop = false;
+
+        }//End Main Function
         
-        public static string TranslateWord(string word)
-        {
-            // your code goes here
-            return word;
-        }
-    }
-}
+    }//End Class Program
+
+}//End Name Space
