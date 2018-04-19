@@ -26,12 +26,13 @@ namespace PigLatin
 
             if (firstVowelIndex == 0)
             {
-                return newWords + "yay";
+                newWords += "yay";
             }
             else
             {
-                return newWords + firstLetter + "ay";
+                newWords = newWords + firstLetter + "ay";
             }
+            return newWords;
 
         }
 
