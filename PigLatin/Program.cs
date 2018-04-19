@@ -13,7 +13,7 @@ namespace PigLatin
             Console.WriteLine("Enter a word or a sentence.");
             Console.WriteLine("");//blank space
             string enterWords = Console.ReadLine();
-            Console.WriteLine(LowerCaseWords (TranslateWord(enterWords)));
+            Console.WriteLine(TranslateSentence (LowerCaseWords (TranslateWord(enterWords))));
             Console.WriteLine("");//blank Space
         }
 
@@ -38,6 +38,12 @@ namespace PigLatin
         public static string LowerCaseWords(string newWords)
         {
             return newWords.ToLower();
+        }
+
+        public static string TranslateSentence(string sentence)
+        {
+            string[] newWords = sentence.Split(" ");
+            return string.Join(" ", newWords);
         }
 
         //return newWords + firstLetter + "ay";
