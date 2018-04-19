@@ -22,25 +22,25 @@ namespace PigLatin
             int firstVowelIndex = firstWord.IndexOfAny(new char[] {'A', 'E', 'I', 'O', 'U','a', 'e', 'i', 'o', 'u'});
 
             string firstLetter = firstWord.Substring(0, firstVowelIndex);
-            string newWord = firstWord.Substring(firstVowelIndex);
+            string newWords = firstWord.Substring(firstVowelIndex);
 
             if (firstVowelIndex == 0)
             {
-                return newWord + "yay";
+                return newWords + "yay";
             }
             else
             {
-                return newWord + firstLetter + "ay";
+                return newWords + firstLetter + "ay";
             }
 
         }
 
-        public static string LowerCaseWords(string newWord)
+        public static string LowerCaseWords(string newWords)
         {
-            return newWord.ToLower();
+            return newWords.ToLower();
         }
-        
-        //return newWord + firstLetter + "ay";
+
+        //return newWords + firstLetter + "ay";
         //return firstWord.IndexOfAny(new char[] {'a', 'e', 'i', 'o', 'u'});
 
         
