@@ -30,7 +30,7 @@ namespace RockPaperScissors
             //}
             switch (hand1 == "rock")
             {
-            case (hand2:
+            case (hand2 = "scissors")
                 return ("Hand One Wins!");
             }
 
