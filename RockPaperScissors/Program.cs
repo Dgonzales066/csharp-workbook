@@ -49,18 +49,18 @@ namespace RockPaperScissors
                 }
                 else if (playerTwo == "paper")
                 {
-                    Console.WriteLine("Hand One - You lose.");
+                    Console.WriteLine("Hand Two Wins");
                 }
                 else 
                 {
-                    Console.WriteLine("Hand One - You win!");
+                    Console.WriteLine("Hand One Wins!");
                 }
             }
             else if (playerOne == "paper")
             {
                 if (playerTwo == "rock")
                 {
-                    Console.WriteLine("Hand One - You win!");
+                    Console.WriteLine("Hand One Wins!");
                 }
                 else if (playerTwo == "paper")
                 {
@@ -68,18 +68,18 @@ namespace RockPaperScissors
                 }
                 else 
                 {
-                    Console.WriteLine("Hand One - You lose.");
+                    Console.WriteLine("Hand Two Wins.");
                 }
             }
             else //(playerOne == "scissors")
             {
                 if (playerTwo == "rock")
                 {
-                    Console.WriteLine("Hand One - You lose.");
+                    Console.WriteLine("Hand Two Wins.");
                 }
                 else if (playerTwo == "paper")
                 {
-                    Console.WriteLine("Hand One - You win.");
+                    Console.WriteLine("Hand One Wins.");
                 }
                 else 
                 {
