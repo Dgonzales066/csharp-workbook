@@ -23,7 +23,7 @@ namespace PigLatin
 
                 for (int i = 0; i < tempInput.Length; i++)
                 {
-                    Console.WriteLine(TranslateWord(tempInput[i]));
+                    Console.Write(TranslateWord(tempInput[i]));
                 }
 
                 //Console.WriteLine(TranslateSentence (TranslateWord(enterWords)));
@@ -58,23 +58,7 @@ namespace PigLatin
                 newWords = newWords + firstLetter + "ay" + " ";
             }
             return newWords;
-
         }
-
-        // public static string LowerCaseWords(string newWords)
-        // {
-        //     return newWords.ToLower();
-        // }
-
-        // public static string TranslateSentence(string sentence)
-        // {
-        //     string[] newWords = sentence.Split(" ");
-        //     return string.Join(" ", newWords);
-        // }
-
-        //return newWords + firstLetter + "ay";
-        //return firstWord.IndexOfAny(new char[] {'a', 'e', 'i', 'o', 'u'});
-
         
     }
 
