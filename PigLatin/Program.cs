@@ -6,15 +6,40 @@ namespace PigLatin
     {
         public static void Main()
         {
-            // your code goes here
-            // leave this command at the end so your program does not close automatically
+            bool keepGoing = true;
+            while(keepGoing)
+            {
 
-            Console.WriteLine("Lets write in Pig Latin.");
-            Console.WriteLine("Enter a word or a sentence.");
-            Console.WriteLine("");//blank space
-            string enterWords = Console.ReadLine();
-            Console.WriteLine(TranslateSentence (LowerCaseWords (TranslateWord(enterWords))));
-            Console.WriteLine("");//blank Space
+                
+                // your code goes here
+                // leave this command at the end so your program does not close automatically
+
+                Console.WriteLine("Lets write in Pig Latin.");
+                Console.WriteLine("Enter a word or a sentence.");
+                Console.WriteLine("");//blank space
+                string enterWords = Console.ReadLine().ToLower();
+
+                string[] tempInput = enterWords.Split(' ');
+
+                for (int i = 0; i < tempInput.Length; i++)
+                {
+                    Console.WriteLine(TranslateWord(tempInput[i]));
+                }
+
+                //Console.WriteLine(TranslateSentence (TranslateWord(enterWords)));
+                Console.WriteLine("");//blank Space
+                Console.WriteLine("Keep going? [yes or no]");
+                string answer = "";
+                answer = Console.ReadLine();
+                if (answer == "yes")
+                {
+                    keepGoing = true;
+                }
+                else
+                {
+                    keepGoing = false;
+                }
+            }
         }
 
         public static string TranslateWord(string firstWord)
@@ -26,20 +51,20 @@ namespace PigLatin
 
             if (firstVowelIndex == 0)
             {
-                newWords += "yay";
+                newWords += "yay" + " ";
             }
             else
             {
-                newWords = newWords + firstLetter + "ay";
+                newWords = newWords + firstLetter + "ay" + " ";
             }
             return newWords;
 
         }
 
-        public static string LowerCaseWords(string newWords)
-        {
-            return newWords.ToLower();
-        }
+        // public static string LowerCaseWords(string newWords)
+        // {
+        //     return newWords.ToLower();
+        // }
 
         public static string TranslateSentence(string sentence)
         {
