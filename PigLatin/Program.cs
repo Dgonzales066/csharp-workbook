@@ -66,11 +66,11 @@ namespace PigLatin
         //     return newWords.ToLower();
         // }
 
-        public static string TranslateSentence(string sentence)
-        {
-            string[] newWords = sentence.Split(" ");
-            return string.Join(" ", newWords);
-        }
+        // public static string TranslateSentence(string sentence)
+        // {
+        //     string[] newWords = sentence.Split(" ");
+        //     return string.Join(" ", newWords);
+        // }
 
         //return newWords + firstLetter + "ay";
         //return firstWord.IndexOfAny(new char[] {'a', 'e', 'i', 'o', 'u'});
