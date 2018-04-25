@@ -44,20 +44,19 @@ namespace PigLatin
 
         public static string TranslateWord(string firstWord)
         {
-            int firstVowelIndex = firstWord.IndexOfAny(new char[] {'A', 'E', 'I', 'O', 'U','a', 'e', 'i', 'o', 'u'});
+            int firstVowelIndex = firstWord.IndexOfAny(new char[] {'A', 'E', 'I', 'O', 'U', 'Y', 'a', 'e', 'i', 'o', 'u', 'y'});
 
-            string firstLetter = firstWord.Substring(0, firstVowelIndex);
-            string newWords = firstWord.Substring(firstVowelIndex);
-
-            if (firstVowelIndex == 0)
+            if (firstVowelIndex <= 0)
             {
-                newWords += "yay" + " ";
+                return firstWord + "ay" + " ";
             }
             else
             {
-                newWords = newWords + firstLetter + "ay" + " ";
+                string firstLetter = firstWord.Substring(0, firstVowelIndex);
+                string newWords = firstWord.Substring(firstVowelIndex);
+                return newWords + firstLetter + "ay" + " ";
             }
-            return newWords;
+            
         }
         
     }
