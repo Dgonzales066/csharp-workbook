@@ -28,8 +28,6 @@ namespace RockPaperScissors
                 // Console.WriteLine("Player One has" + (Points(hand1)) + "points");
                 // Console.WriteLine("Player Two has" + (Points(hand2)) + "points");
 
-                
-
                 // Console.WriteLine("New game? [yes or no]");
                 // string answer = "";
                 // answer = Console.ReadLine();
