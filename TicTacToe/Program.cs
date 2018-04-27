@@ -36,7 +36,10 @@ namespace TicTacToe
 
         public static void PlaceMark(int row, int column)
         {
-        // your code goes here
+            // your code goes here
+            //board[row][column] = "x";
+
+            
         }
 
         public static bool CheckForWin()
