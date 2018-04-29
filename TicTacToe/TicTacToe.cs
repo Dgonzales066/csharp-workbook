@@ -37,15 +37,7 @@ namespace TicTacToe
         public static void PlaceMark(int row, int column)
         {
             // your code goes here
-            //board[row][column] = "x";
-            if (playerTurn == "x")
-            {
-                
-            }
-            else
-            {
-                //return playerTurn == "x";
-            }
+
 
             
         }
