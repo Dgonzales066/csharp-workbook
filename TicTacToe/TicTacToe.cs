@@ -38,12 +38,12 @@ namespace TicTacToe
             Console.WriteLine("Enter Column:");
             int column = int.Parse(Console.ReadLine());
             PlaceMark(row, column);
-
+            
             if (CheckForWin())
             {
                 DrawBoard();
                 Console.WriteLine();
-                Console.WriteLine("Congratulations " + playerTurn + "! You won!!");
+                Console.WriteLine("Congratulations Player " + playerTurn + "! You won!!");
                 return;
             }
             else if (CheckForTie())
@@ -55,7 +55,6 @@ namespace TicTacToe
             }
             
             playerTurn = (playerTurn == "X") ? "O" : "X";
-
         }
 
 
@@ -65,24 +64,19 @@ namespace TicTacToe
             board[row][column] = playerTurn;
 
             return;
-              
         }
 
+        // public static bool checkBoard(int row, int column)//check if position is taken
+        // {
+        //     bool OK = false;
+        //     if ( row > 3 || column > 3 || row < 1 || column < 1)
+        //         return false;
 
-        public static bool checkBoard (int row, int column)//check if position is taken
-        {
-            bool OK = false;
-            if ( row > 3 || column > 3)
-                return false;
+        //     if (board[row][column] != "X" && board[row][column] != "O")
+        //         OK = true; 
 
-            if (board[row][column] != "X" && board[row][column] != "O")
-            {
-                Console.WriteLine("invalid move");
-            }
-                OK = true; 
-
-            return OK;
-        }
+        //     return OK;
+        // }
 
         public static bool CheckForWin()
         {
@@ -91,7 +85,6 @@ namespace TicTacToe
             {
                 return true;
             }
-
             return false;
         }
 
@@ -129,6 +122,7 @@ namespace TicTacToe
                 return true;
             if (board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
                 return true;
+
             return false;
         }
 
