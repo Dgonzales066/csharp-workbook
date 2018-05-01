@@ -12,8 +12,6 @@ namespace TicTacToe
             new string[] {" ", " ", " "}
         };
 
-
-
         public static void Main()
         {
             do
@@ -25,8 +23,6 @@ namespace TicTacToe
 
             Console.ReadLine();
         }
-
-
 
         public static void GetInput()
         {
