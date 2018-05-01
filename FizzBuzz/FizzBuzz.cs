@@ -9,7 +9,7 @@ namespace FizzBuzz
             //List numbers 1 to 100;
             for (int i = 1; i < 101; i++)
             {   
-                if (i % 15 == 0)//numbers divisible by 3 and 5 print FizzBuzz
+                if (i % 15 == 0)//numbers divisible by 3 and 5 (or 15) print FizzBuzz
                 {
                     Console.WriteLine("FizzBuzz");
                 }
