@@ -4,13 +4,13 @@ namespace StarWars
 {
     class Program
     {
-        public static void Main()
+        static void Main()
         {
             Person leia = new Person("Leia", "Organa", "Rebel");
             Person darth = new Person("Darth", "Vader", "Imperial");
-            // Ship falcon = new Ship("Rebel", "Smuggling", 2);
-            // Ship tie = new Ship("Tie", "Fighter", 1);
-            //Console.WriteLine("Hello world!");
+            Ship falcon = new Ship("Rebel", "Smuggling", 2);
+            Ship tie = new Ship("Tie", "Fighter", 1);
+            Console.WriteLine("Hello world!");
         }
     }
 
@@ -45,50 +45,50 @@ namespace StarWars
         }
     }
 
-    // class Ship
-    // {
-    //     private Person[] passengers;
+    class Ship
+    {
+        private Person[] passengers;
 
-    //     public Ship(string alliance, string type, int size)
-    //     {
-    //         this.Type = type;
-    //         this.Alliance = alliance;
-    //         this.passengers = new Person[size];
-    //     }
+        public Ship(string alliance, string type, int size)
+        {
+            this.Type = type;
+            this.Alliance = alliance;
+            this.passengers = new Person[size];
+        }
 
-    //     public string Type
-    //     {
-    //         get;
-    //         set;
-    //     }
+        public string Type
+        {
+            get;
+            set;
+        }
 
-    //     public string Alliance
-    //     {
-    //         get;
-    //         set;
-    //     }
+        public string Alliance
+        {
+            get;
+            set;
+        }
 
-    //     public string Passengers
-    //     {
-    //         get
-    //         {
-    //             foreach (var person in passengers)
-    //             {
-    //                 Console.WriteLine(String.Format("{0}", person.FullName));
-    //             }
+        public string Passengers
+        {
+            get
+            {
+                foreach (var person in passengers)
+                {
+                    Console.WriteLine(String.Format("{0}", person.FullName));
+                }
 
-    //             return "That's Everybody!";
-    //         }
-    //     }
+                return "That's Everybody!";
+            }
+        }
 
-    //     public void EnterShip(Person person, int seat)
-    //     {
-    //         this.passengers[seat] = person;
-    //     }
+        public void EnterShip(Person person, int seat)
+        {
+            this.passengers[seat] = person;
+        }
 
-    //     public void ExitShip(int seat)
-    //     {
-    //         this.passengers[seat] = null;
-    //     }
-    // }
+        public void ExitShip(int seat)
+        {
+            this.passengers[seat] = null;
+        }
+    }
 }
