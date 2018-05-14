@@ -4,18 +4,25 @@ namespace OOP
 {
     class Program
     {
+        //Business Logic
         static void Main()
         {
             Garage smallGarage = new Garage(2);
-            Car redCar = new Car("red");
-            Car blueCar = new Car("blue");
+            Car car1 = new Car("red");
+            Car car2 = new Car("blue");
 
+            smallGarage.ParkCar(car1, 0);
+            smallGarage.ParkCar(car2, 1);
+
+            //Console.WriteLine("howdy");
             //smallGarage.ParkCar(carTwo, 0);
             // Console.WriteLine(Car.Garage.color.Cars());
 
             Console.WriteLine(smallGarage.Cars);
             // Console.WriteLine(carOne.color);
             // Console.WriteLine(smallGarage.cars[spot]);
+            // Console.WriteLine(car1.color);
+            // Console.WriteLine(car2.color);
         }
     }
 
@@ -24,11 +31,11 @@ namespace OOP
         //Constructor - Initializer?
         public Car(string initialColor)
         {
-             color = initialColor;
+            Color = initialColor;
         }
 
         //1st Property?
-        public string color { get; }
+        public string Color { get; private set; }
     }
 
     class Garage
@@ -51,8 +58,15 @@ namespace OOP
         {
             get
             {
-                return "Car in spot 1 is {cars[0].color} and the Car in spot 2 is {cars[1].color}";
+                for (int i = 0; i < cars.Length; i++)
+                {
+                    if(cars[i] != null)
+                    {
+                        Console.WriteLine($"The {cars[i].Color} car is in spot1 and the  {cars[i].Color} car in spot 2");
+                    }
+                }
             }
+            return "That's all";
         }
 
         public void ParkCar(Car car, int spot)
