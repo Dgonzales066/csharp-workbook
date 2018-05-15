@@ -11,18 +11,14 @@ namespace OOP
             Car car1 = new Car("red");
             Car car2 = new Car("blue");
 
+            People driver1 = new People("Jane");
+            People driver2 = new People("Bill");
+
             smallGarage.ParkCar(car1, 0);
             smallGarage.ParkCar(car2, 1);
 
-            //Console.WriteLine("howdy");
-            //smallGarage.ParkCar(carTwo, 0);
-            // Console.WriteLine(Car.Garage.color.Cars());
-
             Console.WriteLine(smallGarage.Cars);
-            // Console.WriteLine(carOne.color);
-            // Console.WriteLine(smallGarage.cars[spot]);
-            // Console.WriteLine(car1.color);
-            // Console.WriteLine(car2.color);
+            Console.WriteLine("hello");
         }
     }
 
@@ -62,11 +58,11 @@ namespace OOP
                 {
                     if(cars[i] != null)
                     {
-                        Console.WriteLine($"The {cars[i].Color} car is in spot1 and the  {cars[i].Color} car in spot 2");
+                        Console.WriteLine($"The {cars[i].Color} car is in spot {i + 1}");
                     }
                 }
+                return "In the samll garage.";
             }
-            return "That's all";
         }
 
         public void ParkCar(Car car, int spot)
@@ -76,11 +72,30 @@ namespace OOP
     }
 
     class People
-    {
-        public People()
-        {
+    {  
+        private Car[] cars;
 
+        private string name;
+
+        public People(string name)
+        {
+            this.name = name;
         }
+
+        public string Owners
+        {
+            get
+            {
+                for (int i = 0; i < name.Length; i++)
+                {
+                    if (cars[i] != null)
+                    {
+                        Console.WriteLine($"The {cars[i].Color} car is {this.name}");
+                    }
+                }
+                return "small garage";
+            }
+        }       
 
     }
 
