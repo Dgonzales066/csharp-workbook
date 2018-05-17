@@ -14,11 +14,12 @@ namespace OOP
             People driver1 = new People("Jane");
             People driver2 = new People("Bill");
 
-            smallGarage.ParkCar(car1, 0);
-            smallGarage.ParkCar(car2, 1);
+            // smallGarage.ParkCar(car1, 0);
+            // smallGarage.ParkCar(car2, 1);
+            Report rando = new Report(2);
 
             Console.WriteLine(smallGarage.Cars);
-            //Console.WriteLine(Car + People);
+            Console.WriteLine(rando.Customers);
 
             Console.WriteLine("hello");
         }
@@ -26,9 +27,7 @@ namespace OOP
 //****************************************************************************** */
     class Car
     {
-        private string Owner;
-
-        private People[] person;
+        private People[] peeps;
 
         //Constructor - Initializer?
         public Car(string initialColor)
@@ -38,18 +37,6 @@ namespace OOP
 
         //1st Property? Field? Object?  
         public string Color { get; set; }
-
-        // public string Person
-        // {
-        //     get 
-        //     {
-        //         foreach (var person in Owner)
-        //         {
-        //             Console.WriteLine(person.Owner);
-        //         }
-        //         return "thats all";
-        //     }
-        // }
 
     }
 
@@ -62,8 +49,10 @@ namespace OOP
 
         public People(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
+
+        public string Name { get; set; }
 
         public string Owner
         {
@@ -74,6 +63,33 @@ namespace OOP
         }
         
     }
+
+ //****************************************************************************** */
+    class Report
+    { 
+        private People[] peeps;
+
+        private Car[] cars;
+
+        public string Customers
+        {
+            get 
+            {
+                for (int i = 0; i < peeps.Length && i < cars.Length; i++)
+                {
+                    if (peeps[i] != null && cars[i] != null)
+                    {
+                        Console.WriteLine($"{peeps[i].Name} owns the {cars[i].Color} car.");
+                    } 
+                }
+                return "thats all.";
+            }
+        }
+
+
+
+    }
+
  
 //****************************************************************************** */
     class Garage
@@ -107,10 +123,10 @@ namespace OOP
             }
         }
 
-        public void ParkCar(Car car, int spot)
-        {
-            cars[spot] = car;
-        }
+        // public void ParkCar(Car car, int spot)
+        // {
+        //     cars[spot] = car;
+        // }
     }
 
 }
