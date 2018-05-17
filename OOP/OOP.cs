@@ -18,22 +18,64 @@ namespace OOP
             smallGarage.ParkCar(car2, 1);
 
             Console.WriteLine(smallGarage.Cars);
+            //Console.WriteLine(Car + People);
+
             Console.WriteLine("hello");
         }
     }
-
+//****************************************************************************** */
     class Car
     {
+        private string Owner;
+
+        private People[] person;
+
         //Constructor - Initializer?
         public Car(string initialColor)
         {
-            Color = initialColor;
+            this.Color = initialColor;
         }
 
-        //1st Property?
-        public string Color { get; private set; }
+        //1st Property? Field? Object?  
+        public string Color { get; set; }
+
+        // public string Person
+        // {
+        //     get 
+        //     {
+        //         foreach (var person in Owner)
+        //         {
+        //             Console.WriteLine(person.Owner);
+        //         }
+        //         return "thats all";
+        //     }
+        // }
+
     }
 
+//****************************************************************************** */
+    class People
+    {  
+        //private Car[] cars;
+
+        private string name;
+
+        public People(string name)
+        {
+            this.name = name;
+        }
+
+        public string Owner
+        {
+            get
+            {
+                return this.name;
+            }
+        }
+        
+    }
+ 
+//****************************************************************************** */
     class Garage
     {
         private Car[] cars;
@@ -70,35 +112,5 @@ namespace OOP
             cars[spot] = car;
         }
     }
-
-    class People
-    {  
-        private Car[] cars;
-
-        private string name;
-
-        public People(string name)
-        {
-            this.name = name;
-        }
-
-        public string Owners
-        {
-            get
-            {
-                for (int i = 0; i < name.Length; i++)
-                {
-                    if (cars[i] != null)
-                    {
-                        Console.WriteLine($"The {cars[i].Color} car is {this.name}");
-                    }
-                }
-                return "small garage";
-            }
-        }       
-
-    }
-
-
 
 }
