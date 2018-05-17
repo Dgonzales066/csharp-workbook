@@ -16,7 +16,7 @@ namespace OOP
 
             // smallGarage.ParkCar(car1, 0);
             // smallGarage.ParkCar(car2, 1);
-            Report rando = new Report(2);
+            Report rando = new Report();
 
             Console.WriteLine(smallGarage.Cars);
             Console.WriteLine(rando.Customers);
@@ -47,6 +47,7 @@ namespace OOP
 
         private string name;
 
+        //Constructor - Initializer?
         public People(string name)
         {
             this.Name = name;
@@ -71,6 +72,12 @@ namespace OOP
 
         private Car[] cars;
 
+        //Constructor - Initializer?
+        public Report(string Car, string People)
+        {
+
+        }
+
         public string Customers
         {
             get 
@@ -85,8 +92,6 @@ namespace OOP
                 return "thats all.";
             }
         }
-
-
 
     }
 
@@ -122,7 +127,7 @@ namespace OOP
                 return "In the samll garage.";
             }
         }
-
+ 
         // public void ParkCar(Car car, int spot)
         // {
         //     cars[spot] = car;
