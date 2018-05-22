@@ -10,27 +10,38 @@ namespace StarWars
             Person han = new Person("Han", "Solo", "Rebel");
             Person luke = new Person("Luke", "Skywalker", "Rebel");
             Person darth = new Person("Darth", "Vader", "Imperial");
-            Person trooper = new Person("Storm", "Trooper", "Imperial");
+            Person trooper = new Person("Stormtrooper", "FN2187", "Imperial");
             Person palpatine = new Person("Emporer", "Palpatine", "Imperial");
+
+            Ship xwing = new Ship("X-Wing", "Rebel", "Fighter", 1);
             Ship falcon = new Ship("Millenium Falcon", "Rebel", "Smuggling", 2);
             Ship tie = new Ship("Tie Fighter", "Imperial", "Fighter", 1);
-            Ship tiex1 = new Ship("Advance X1", "Imperial", "Fighter", 1);
-            Ship xwing = new Ship("X-wing", "Rebel", "Fighter", 1);
-            Station DeathStar = new Station("Death Star", "Imperial", 2);
-            Station RebelStation = new Station("Rebel Space Station", "Rebel", 1);
+            Ship tiex1 = new Ship("Advance Tie Fighter X1", "Imperial", "Fighter", 1);
+            Ship shuttle = new Ship("Shuttle Craft Tydirium", "Imperial", "Landing Craft", 1);
+
+            Station DeathStar = new Station("Death Star", "Imperial", 3);
+            Station RebelStation = new Station("Rebel Space Station", "Rebel", 2);
+
             xwing.EnterShip(luke, 0);
             tie.EnterShip(trooper, 0);
             tiex1.EnterShip(darth, 0);
             falcon.EnterShip(han, 0);
             falcon.EnterShip(leia, 1);
+            shuttle.EnterShip(palpatine, 0);
+
             DeathStar.EnterStation(tie, 0);
+            DeathStar.EnterStation(tiex1, 1);
+            DeathStar.EnterStation(shuttle, 2);
             RebelStation.EnterStation(falcon, 0);
-            Console.WriteLine("Ships and passengers on rebel station.");
+            RebelStation.EnterStation(xwing, 1);
+
+            Console.WriteLine("");
+            Console.WriteLine("Ships and Passengers on Rebel Station: Yavin.");
             RebelStation.Report();
-            Console.WriteLine("Ships and paasengers on the Death Star.");
+            Console.WriteLine("Ships and Passengers on the Death Star.");
             DeathStar.Report();
 
-            //Console.WriteLine(Ship.passengers);
+            //Console.WriteLine("hello world");
         }
     }
 //************************************************************************************** */
@@ -70,12 +81,12 @@ namespace StarWars
     {
         private Person[] passengers;
 
-        public Ship(string name, string alliance, string type, int size)
+        public Ship(string name, string alliance, string type, int seat)
         {
-            this.Type = type;
-            this.Alliance = alliance;
-            this.passengers = new Person[size];
             this.Name = name;
+            this.Alliance = alliance;
+            this.Type = type;
+            this.passengers = new Person[seat];
         }
 
         public string Name { get; set; }
@@ -84,6 +95,25 @@ namespace StarWars
 
         public string Alliance { get; set; }
 
+        public void EnterShip(Person person, int seat)
+        {
+            this.passengers[seat] = person;
+        }
+
+        // public string Passengers
+        // {
+        //     get
+        //     {
+        //         for (int i = 0; i < passengers.Length; i++)
+        //         {
+        //             if (passengers[i] != null)
+        //             {
+        //                 Console.WriteLine($"{passengers[i].FullName} is in seat {i + 1}");
+        //             }
+        //         }
+        //         return " ";
+        //     }
+        // }
 
         public string Passengers
         {
@@ -95,11 +125,6 @@ namespace StarWars
                 }
                 return " ";
             }
-        }
-
-        public void EnterShip(Person person, int seat)
-        {
-            this.passengers[seat] = person;
         }
 
         public void ExitShip(int seat)
@@ -120,22 +145,13 @@ namespace StarWars
             this.ships = new Ship[spaces];
         }
 
-        public string Name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
 
-        public string Alliance
-        {
-            get;
-            set;
-        }
+        public string Alliance { get; set; }
 
-        public int spaces
+        public void EnterStation(Ship ship, int spaces)
         {
-            get;
-            set;
+            this.ships[spaces] = ship;
         }
 
         public void Report()
@@ -149,15 +165,12 @@ namespace StarWars
             }
         }
 
-        public void EnterStation(Ship ship, int space)
-        {
-            this.ships[space] = ship;
-        }
-
         public void ExitStation(Ship ship, int space)
         {
             this.ships[space] = null;
         }
 
     }
-}
+
+
+}//end of Star Wars
