@@ -50,11 +50,11 @@ namespace Checkpoint1
             //Part 3 - Checkpoint 1 /////////////////////////////
             Console.WriteLine("Ok, let's multiply numbers together.");
             Console.WriteLine("Enter a number and we will multiply it by all it's previous numbers.");
-            int numMultiply = int.Parse(Console.ReadLine());
+            ulong numMultiply = ulong.Parse(Console.ReadLine());
 
-            int finalAnswer = 1;
+            ulong finalAnswer = 1;
 
-            for (int i = 1; i <= numMultiply; i++)
+            for (ulong i = 1; i <= numMultiply; i++)
             {
                 finalAnswer *= i;
             }

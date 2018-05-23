@@ -6,7 +6,7 @@ namespace TowersOfHanoi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Enter the number of Disk.");
         }
     }
 }
