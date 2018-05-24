@@ -6,22 +6,27 @@ namespace TowersOfHanoi
     {
         static void Main(string[] args)
         {
-            int n = 4;
+            Console.WriteLine();
+            Console.WriteLine("Enter the number of disk on rod A.");
+            var numStacks = Console.ReadLine();
 
-            towerOfHanoi(n, 'A', 'C', 'B');
+            var n = Convert.ToInt32(numStacks);
+
+            Tower(n, 'A', 'C', 'B');
             //Console.WriteLine("Enter the number of Disk.");
         }
 
-        static void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod)
+        //method?
+        static void Tower(int n, char A_rod, char C_rod, char B_rod)
         {
             if (n == 1)
             {
-                Console.WriteLine("Move disk 1 from rod " + from_rod + " to rod " + to_rod);
+                Console.WriteLine("Move disk " + n + " from rod " + A_rod + " to rod " + C_rod);
                 return;
             }
-            towerOfHanoi(n-1, from_rod, aux_rod, to_rod);
-            Console.WriteLine("Move disk " + n + " from rod " + from_rod + " to rod " + to_rod);
-            towerOfHanoi(n-1, aux_rod, to_rod, from_rod);
+            Tower(n-1, A_rod, B_rod, C_rod);
+            Console.WriteLine("Move disk " + n + " from rod " + A_rod + " to rod " + C_rod);
+            Tower(n-1, B_rod, C_rod, A_rod);
         }
 
     }
