@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RainForest {
+namespace RainForest 
+{
     class Program {
         static void Main (string[] args) {
             Company rainforest = new Company ("Rainforest, LLC");
@@ -14,7 +15,8 @@ namespace RainForest {
                 rainforest.warehouses.Add (new Warehouse (city, 2));
             }
 
-            for (int i = 0; i < rainforest.warehouses.Count; i++) {
+            for (int i = 0; i < rainforest.warehouses.Count; i++) 
+            {
                 Warehouse warehouse = rainforest.warehouses[i];
                 Container container = new Container ($"{warehouse.location}-1", i + 1);
                 rainforest.warehouses[i].containers.Add (container);
@@ -28,20 +30,30 @@ namespace RainForest {
 
             rainforest.GenerateManifest ();
 
+
             Console.WriteLine ("Hello World!");
+            //Console.WriteLine(rainforest.warehouses);
         }
     }
 
-    class Company {
+
+
+    class Company 
+    {
+        // Properties
         public string name;
+
         public List<Warehouse> warehouses;
 
-        public Company (string name) {
+        // Constructor
+        public Company (string name) 
+        {
             this.name = name;
             this.warehouses = new List<Warehouse> ();
         }
 
-        public void GenerateManifest () {
+        public void GenerateManifest () 
+        {
             string html = @"
                 <html>
                     <head>
@@ -88,12 +100,19 @@ namespace RainForest {
         }
     }
 
-    class Warehouse {
+    class Warehouse 
+    {
+        // Properties
         public string location;
+
+        // Properties
         public int size;
+        
         public List<Container> containers;
 
-        public Warehouse (string location, int size) {
+        // Constructor
+        public Warehouse (string location, int size) 
+        {
             this.location = location;
             this.size = size;
             this.containers = new List<Container> ();
@@ -106,6 +125,7 @@ namespace RainForest {
         public int size;
         public string id;
 
+        // Constructor
         public Container (string id, int size) {
             this.id = id;
             this.size = size;
@@ -114,17 +134,20 @@ namespace RainForest {
 
     }
 
-    class Item {
+    class Item 
+    {
         public string name;
         public double price;
 
+        // Constructor
         public Item (string name, double price) {
             this.name = name;
             this.price = price;
         }
 
     }
-}
+
+}// end of Rainforest
 
 
 
