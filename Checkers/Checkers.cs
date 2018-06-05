@@ -105,7 +105,7 @@ namespace Checkers
         public void GenerateCheckers()
         {
             // Your code here
-            int 
+             
             return;
         }
         
